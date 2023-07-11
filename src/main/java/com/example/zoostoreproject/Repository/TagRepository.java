@@ -1,4 +1,13 @@
 package com.example.zoostoreproject.Repository;
 
-public class TagRepository {
+import com.example.zoostoreproject.Entity.Tag;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import java.util.UUID;
+
+@Repository
+public interface TagRepository extends JpaRepository<Tag, UUID>
+{
+
 }

@@ -1,22 +1,24 @@
 package com.example.zoostoreproject.Entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Table;
+
+import jakarta.persistence.*;
 import lombok.*;
+
+import java.util.UUID;
 
 @Getter
 @Setter
 @Builder
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
-@AllArgsConstructor (access = AccessLevel.PROTECTED)
+@NoArgsConstructor(access = AccessLevel.PUBLIC)
+@AllArgsConstructor (access = AccessLevel.PUBLIC)
+@Entity
 @Table(name = "tags")
 public class Tag {
     @jakarta.persistence.Id
     @GeneratedValue(strategy = GenerationType.UUID)
     @Column
-    protected Long Id;
+    protected UUID Id;
     @Column
     protected String tagName;
+
 }

@@ -6,27 +6,30 @@ import jakarta.persistence.*;
 import lombok.*;
 import org.aspectj.weaver.AnnotationNameValuePair;
 
+import java.util.List;
 import java.util.Set;
+import java.util.UUID;
 
 @Getter
 @Setter
 @Builder
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
-@AllArgsConstructor (access = AccessLevel.PROTECTED)
+@NoArgsConstructor(access = AccessLevel.PUBLIC)
+@AllArgsConstructor (access = AccessLevel.PUBLIC)
+@Entity
 @Table(name = "items")
 public class Item {
-    @jakarta.persistence.Id
+    @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     @Column
-    protected Long Id;
+    protected UUID Id;
     @Column
     protected String title;
     @Column
     protected String description;
     @Column
     protected  String vendor;
-    @Column
-    protected  Set<Tag> tags;
+   // @Column
+   // protected List<Tag> tags;
     //protected Set<media> media;
 
 }

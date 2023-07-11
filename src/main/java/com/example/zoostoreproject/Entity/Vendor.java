@@ -4,19 +4,19 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.util.UUID;
+
 @Getter
 @Setter
 @Builder
 @NoArgsConstructor(access = AccessLevel.PUBLIC)
 @AllArgsConstructor (access = AccessLevel.PUBLIC)
 @Entity
-@Table(name = "media")
-public class Media {
+@Table(name = "vendors")
+public class Vendor {
     @jakarta.persistence.Id
     @GeneratedValue(strategy = GenerationType.UUID)
     @Column
     protected UUID Id;
     @Column
-    protected String url;
-
+    protected String vendorName;
 }
