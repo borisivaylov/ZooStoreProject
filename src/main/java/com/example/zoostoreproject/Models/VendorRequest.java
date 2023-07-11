@@ -3,15 +3,17 @@ package com.example.zoostoreproject.Models;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
 
+import java.util.UUID;
+
 @Getter
 @Setter
 @Builder
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
-@AllArgsConstructor (access = AccessLevel.PROTECTED)
+@NoArgsConstructor
+@AllArgsConstructor
 public class VendorRequest
 {
     @JsonProperty("id")
-    private Long id;
+    private UUID id;
     @JsonProperty("vendorName")
     private String title;
 }

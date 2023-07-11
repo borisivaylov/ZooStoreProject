@@ -19,4 +19,7 @@ public class Media {
     @Column
     protected String url;
 
+    @Column
+    protected UUID itemId;
+
 }

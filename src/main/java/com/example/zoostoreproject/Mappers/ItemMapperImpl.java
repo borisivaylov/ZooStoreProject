@@ -4,7 +4,6 @@ import com.example.zoostoreproject.Entity.Item;
 import com.example.zoostoreproject.Models.ItemRequest;
 import com.example.zoostoreproject.Models.ItemResponse;
 import org.mapstruct.Mapper;
-
 @Mapper
 public class ItemMapperImpl implements ItemMapper {
     @Override
@@ -21,8 +20,6 @@ public class ItemMapperImpl implements ItemMapper {
         item.setDescription(itemGet.getDescription());
 
         return item;
-
-
     }
 
     @Override

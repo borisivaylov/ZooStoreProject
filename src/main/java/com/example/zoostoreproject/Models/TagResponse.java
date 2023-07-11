@@ -3,14 +3,16 @@ package com.example.zoostoreproject.Models;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
 
+import java.util.UUID;
+
 @Getter
 @Setter
 @Builder
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
-@AllArgsConstructor (access = AccessLevel.PROTECTED)
+@NoArgsConstructor
+@AllArgsConstructor
 public class TagResponse {
     @JsonProperty("id")
-    protected Long Id;
+    protected UUID Id;
 
     @JsonProperty("tagName")
     protected String tagName;
