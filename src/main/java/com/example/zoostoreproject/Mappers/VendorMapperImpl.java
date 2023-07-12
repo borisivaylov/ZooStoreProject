@@ -4,7 +4,9 @@ package com.example.zoostoreproject.Mappers;
 import com.example.zoostoreproject.Entity.Vendor;
 import com.example.zoostoreproject.Models.VendorRequest;
 import com.example.zoostoreproject.Models.VendorResponse;
+import org.springframework.stereotype.Component;
 
+@Component
 public class VendorMapperImpl implements VendorMapper {
 
 
@@ -14,13 +16,10 @@ public class VendorMapperImpl implements VendorMapper {
         if (vendorGet == null) {
             return null;
         }
-
-        Vendor vendor = new Vendor();
-
-        vendor.setId(vendorGet.getId());
-        vendor.setVendorName(vendor.getVendorName());
-
-        return vendor;
+        return Vendor.builder()
+                .Id(vendorGet.getId())
+                .vendorName(vendorGet.getVendorName())
+                .build();
     }
 
     @Override
@@ -28,12 +27,10 @@ public class VendorMapperImpl implements VendorMapper {
         if (vendor == null) {
             return null;
         }
-         VendorResponse vendorResponse = new VendorResponse();
-
-        vendorResponse.setId(vendor.getId());
-        vendorResponse.setTitle(vendor.getVendorName());
-
-        return vendorResponse;
+        return VendorResponse.builder()
+                                        .id(vendor.getId())
+                                        .vendorName(vendor.getVendorName())
+                                        .build();
 
     }
 }

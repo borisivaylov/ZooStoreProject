@@ -7,8 +7,8 @@ import java.util.UUID;
 @Getter
 @Setter
 @Builder
-@NoArgsConstructor(access = AccessLevel.PUBLIC)
-@AllArgsConstructor (access = AccessLevel.PUBLIC)
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "media")
 public class Media {

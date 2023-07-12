@@ -15,5 +15,5 @@ public class VendorResponse
     @JsonProperty("id")
     private UUID id;
     @JsonProperty("vendorName")
-    private String title;
+    private String vendorName;
 }

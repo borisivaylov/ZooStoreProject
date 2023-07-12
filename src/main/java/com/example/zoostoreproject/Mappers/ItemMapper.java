@@ -4,8 +4,7 @@ import com.example.zoostoreproject.Entity.Item;
 import com.example.zoostoreproject.Models.ItemRequest;
 import com.example.zoostoreproject.Models.ItemResponse;
 
-public interface ItemMapper
-{
+public interface ItemMapper {
     Item itemGet(ItemRequest itemGet);
 
     ItemResponse itemPost(Item item);

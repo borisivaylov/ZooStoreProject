@@ -15,5 +15,5 @@ public class VendorRequest
     @JsonProperty("id")
     private UUID id;
     @JsonProperty("vendorName")
-    private String title;
+    private String vendorName;
 }

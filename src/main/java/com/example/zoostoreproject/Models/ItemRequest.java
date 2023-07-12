@@ -1,17 +1,15 @@
 package com.example.zoostoreproject.Models;
 
-import com.example.zoostoreproject.Entity.Media;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
 
-import java.util.Set;
 import java.util.UUID;
 
 @Getter
 @Setter
 @Builder
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
-@AllArgsConstructor (access = AccessLevel.PROTECTED)
+@NoArgsConstructor
+@AllArgsConstructor
 public class ItemRequest {
     @JsonProperty("id")
     private UUID id;

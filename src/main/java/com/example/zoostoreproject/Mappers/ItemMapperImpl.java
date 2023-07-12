@@ -3,8 +3,9 @@ package com.example.zoostoreproject.Mappers;
 import com.example.zoostoreproject.Entity.Item;
 import com.example.zoostoreproject.Models.ItemRequest;
 import com.example.zoostoreproject.Models.ItemResponse;
-import org.mapstruct.Mapper;
-@Mapper
+import org.springframework.stereotype.Component;
+
+@Component
 public class ItemMapperImpl implements ItemMapper {
     @Override
     public Item itemGet(ItemRequest itemGet) {      //dto to item
@@ -12,14 +13,12 @@ public class ItemMapperImpl implements ItemMapper {
         if ( itemGet == null) {
             return null;
         }
-        Item item = new Item();
-
-        item.setId(itemGet.getId());
-        item.setTitle(itemGet.getTitle());
-        item.setVendor(itemGet.getVendor());
-        item.setDescription(itemGet.getDescription());
-
-        return item;
+        return Item.builder()
+                            .Id(itemGet.getId())
+                            .title(itemGet.getTitle())
+                            .vendor(itemGet.getVendor())
+                            .description(itemGet.getDescription())
+                            .build();
     }
 
     @Override
@@ -27,13 +26,11 @@ public class ItemMapperImpl implements ItemMapper {
         if ( item == null) {
             return null;
         }
-        ItemResponse itemResponse = new ItemResponse();
-
-        itemResponse.setId(item.getId());
-        itemResponse.setTitle(item.getTitle());
-        itemResponse.setDescription(item.getDescription());
-        itemResponse.setVendor(item.getVendor());
-
-        return itemResponse;
+        return ItemResponse.builder()
+                                    .id(item.getId())
+                                    .vendor(item.getVendor())
+                                    .description(item.getDescription())
+                                    .title(item.getTitle())
+                                    .build();
     }
 }

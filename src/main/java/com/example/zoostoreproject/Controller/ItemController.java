@@ -1,19 +1,15 @@
 package com.example.zoostoreproject.Controller;
 
-import com.example.zoostoreproject.Mappers.Mapper;
 import com.example.zoostoreproject.Services.ItemServiceImpl;
 import com.example.zoostoreproject.Services.TagServiceImpl;
 import com.example.zoostoreproject.Services.VendorServiceImpl;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.Map;
-
 @RestController
-@RequestMapping("/home")
+@RequestMapping("/item")
 public class ItemController {
 
     ItemServiceImpl itemService;
@@ -39,10 +35,8 @@ public class ItemController {
     public ResponseEntity addItemMedia(){
         return ResponseEntity.ok(itemService.okStatus());
     }
-    @PostMapping("/TagTest")
-    public ResponseEntity tagTest(){
-        return ResponseEntity.ok(tagService.Success());
-    }
+
+
     @PostMapping("/VendorTest")
     public ResponseEntity vendorTest(){return ResponseEntity.ok(vendorService.Success());}
 }
