@@ -1,9 +1,9 @@
 package com.example.zoostoreproject.Controller;
 
-import com.example.zoostoreproject.Entity.Tag;
-import com.example.zoostoreproject.Models.TagRequest;
-import com.example.zoostoreproject.Repository.TagRepository;
-import com.example.zoostoreproject.Services.TagServiceImpl;
+import com.example.zoostoreproject.Data.Entity.Tag;
+import com.example.zoostoreproject.API.Operations.Tag.TagRequest;
+import com.example.zoostoreproject.Data.Repository.TagRepository;
+import com.example.zoostoreproject.Bussiness.operations.tag.TagServiceImpl;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;

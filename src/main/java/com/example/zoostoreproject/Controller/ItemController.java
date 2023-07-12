@@ -1,11 +1,11 @@
 package com.example.zoostoreproject.Controller;
 
-import com.example.zoostoreproject.Entity.Item;
-import com.example.zoostoreproject.Models.ItemRequest;
-import com.example.zoostoreproject.Repository.ItemRepository;
-import com.example.zoostoreproject.Services.ItemServiceImpl;
-import com.example.zoostoreproject.Services.TagServiceImpl;
-import com.example.zoostoreproject.Services.VendorServiceImpl;
+import com.example.zoostoreproject.Data.Entity.Item;
+import com.example.zoostoreproject.API.Operations.Item.ItemRequest;
+import com.example.zoostoreproject.Data.Repository.ItemRepository;
+import com.example.zoostoreproject.Bussiness.operations.item.ItemServiceImpl;
+import com.example.zoostoreproject.Bussiness.operations.tag.TagServiceImpl;
+import com.example.zoostoreproject.Bussiness.operations.vendor.VendorServiceImpl;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

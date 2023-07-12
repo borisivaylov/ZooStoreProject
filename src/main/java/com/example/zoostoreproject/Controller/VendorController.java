@@ -1,9 +1,9 @@
 package com.example.zoostoreproject.Controller;
 
-import com.example.zoostoreproject.Entity.Vendor;
-import com.example.zoostoreproject.Models.VendorRequest;
-import com.example.zoostoreproject.Repository.VendorRepository;
-import com.example.zoostoreproject.Services.VendorServiceImpl;
+import com.example.zoostoreproject.Data.Entity.Vendor;
+import com.example.zoostoreproject.API.Operations.Vendor.VendorRequest;
+import com.example.zoostoreproject.Data.Repository.VendorRepository;
+import com.example.zoostoreproject.Bussiness.operations.vendor.VendorServiceImpl;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
