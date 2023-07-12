@@ -1,6 +1,5 @@
 package com.example.zoostoreproject.Models;
 
-import com.example.zoostoreproject.Entity.Media;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
 

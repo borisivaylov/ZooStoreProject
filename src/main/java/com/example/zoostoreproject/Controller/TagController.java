@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/item")
+@RequestMapping("/tag")
 public class TagController
 {
     private final TagRepository tagRepository;
@@ -24,8 +24,7 @@ public class TagController
     }
 
     @PostMapping("/newtag")
-    Tag newTag(@RequestBody TagRequest tag)
-    {
+    Tag newTag(@RequestBody TagRequest tag) {
         return tagRepository.save(tagService.newTag(tag));
     }
 

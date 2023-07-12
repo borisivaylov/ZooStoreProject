@@ -15,6 +15,6 @@ public class MediaRequest {
     protected UUID Id;
     @JsonProperty("url")
     protected String url;
-    @JsonProperty("id")
+    @JsonProperty("itemId")
     protected UUID itemId;
 }
