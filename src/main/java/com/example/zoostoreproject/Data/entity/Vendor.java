@@ -1,25 +1,20 @@
-package com.example.zoostoreproject.Data.Entity;
+package com.example.zoostoreproject.Data.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
 
 import java.util.UUID;
+
 @Getter
 @Setter
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "media")
-public class Media {
+@Table(name = "vendors")
+public class Vendor {
     @jakarta.persistence.Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    @Column
     protected UUID Id;
-    @Column
-    protected String url;
-
-    @Column
-    protected UUID itemId;
-
+    protected String vendorName;
 }

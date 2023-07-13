@@ -1,7 +1,7 @@
-package com.example.zoostoreproject.Data.Repository;
+package com.example.zoostoreproject.Data.repository;
 
 
-import com.example.zoostoreproject.Data.Entity.Media;
+import com.example.zoostoreproject.Data.entity.Media;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

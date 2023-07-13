@@ -1,8 +1,8 @@
 package com.example.zoostoreproject.Controller;
 
-import com.example.zoostoreproject.Data.Entity.Item;
+import com.example.zoostoreproject.Data.entity.Item;
 import com.example.zoostoreproject.API.Operations.Item.ItemRequest;
-import com.example.zoostoreproject.Data.Repository.ItemRepository;
+import com.example.zoostoreproject.Data.repository.ItemRepository;
 import com.example.zoostoreproject.Bussiness.operations.item.ItemServiceImpl;
 import com.example.zoostoreproject.Bussiness.operations.tag.TagServiceImpl;
 import com.example.zoostoreproject.Bussiness.operations.vendor.VendorServiceImpl;

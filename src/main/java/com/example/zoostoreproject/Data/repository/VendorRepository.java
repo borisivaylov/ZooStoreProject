@@ -1,6 +1,6 @@
-package com.example.zoostoreproject.Data.Repository;
+package com.example.zoostoreproject.Data.repository;
 
-import com.example.zoostoreproject.Data.Entity.Vendor;
+import com.example.zoostoreproject.Data.entity.Vendor;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.UUID;

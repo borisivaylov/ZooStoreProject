@@ -1,6 +1,6 @@
-package com.example.zoostoreproject.Bussiness.Mappers.Tag;
+package com.example.zoostoreproject.Bussiness.mappers.Tag;
 
-import com.example.zoostoreproject.Data.Entity.Tag;
+import com.example.zoostoreproject.Data.entity.Tag;
 import com.example.zoostoreproject.API.Operations.Tag.TagRequest;
 import com.example.zoostoreproject.API.Operations.Tag.TagResponse;
 import org.springframework.stereotype.Component;

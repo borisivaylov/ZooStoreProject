@@ -1,8 +1,11 @@
 package com.example.zoostoreproject.API.Operations.Item;
 
+import com.example.zoostoreproject.Data.entity.Media;
+import com.example.zoostoreproject.Data.entity.Tag;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
 
+import java.util.Set;
 import java.util.UUID;
 
 @Getter
@@ -19,8 +22,8 @@ public class ItemRequest {
     private String description;
     @JsonProperty("vendor")
     private String vendor;
-    //@JsonProperty("media")
-    //private Set<Media> media;
-   // @JsonProperty("tags")
-    //private Set<Tag> tags;
+    @JsonProperty("media")
+    private Set<Media> media;
+    @JsonProperty("tags")
+    private Set<Tag> tags;
 }

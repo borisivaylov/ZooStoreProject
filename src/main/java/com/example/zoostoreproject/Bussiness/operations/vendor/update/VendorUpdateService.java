@@ -1,31 +1,23 @@
 package com.example.zoostoreproject.Bussiness.operations.vendor.update;
 
 import com.example.zoostoreproject.API.Operations.Vendor.VendorRequest;
-import com.example.zoostoreproject.API.Operations.Vendor.VendorResponse;
-import com.example.zoostoreproject.Bussiness.Mappers.Vendor.VendorMapperImpl;
-import com.example.zoostoreproject.Data.Entity.Vendor;
-import com.example.zoostoreproject.Data.Repository.VendorRepository;
+import com.example.zoostoreproject.Data.entity.Vendor;
+import com.example.zoostoreproject.Data.repository.VendorRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Optional;
-import java.util.UUID;
-
 @Service
-
+@RequiredArgsConstructor
 public class VendorUpdateService {
 
-    private VendorRepository vendorRepository;
-    public VendorUpdateService(VendorRepository vendorRepository) {
-        this.vendorRepository = vendorRepository;
-    }
+    private final VendorRepository vendorRepository;
 
-    public Vendor updateVendor(UUID id, String newVendorName){
 
-        Vendor vendor = vendorRepository.findById(id).orElseThrow(()->
-              new IllegalArgumentException("Vendor not found with ID: " + id))  ;
-                vendor.setVendorName(newVendorName);
+    public Vendor updateVendor(VendorRequest vendorRequest){
+
+        Vendor vendor = vendorRepository.findById(vendorRequest.getId()).orElseThrow(()->
+              new IllegalArgumentException("Vendor not found with ID: " + vendorRequest.getId()))  ;
+                vendor.setVendorName(vendorRequest.getVendorName());
 
        // VendorRequest vendorRequest = VendorRequest.builder()
        //         .id(id).build();

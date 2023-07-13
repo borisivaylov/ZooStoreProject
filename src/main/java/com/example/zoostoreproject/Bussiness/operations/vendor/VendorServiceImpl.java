@@ -2,9 +2,9 @@ package com.example.zoostoreproject.Bussiness.operations.vendor;
 
 import com.example.zoostoreproject.API.Operations.Vendor.VendorRequest;
 import com.example.zoostoreproject.API.Operations.Vendor.VendorService;
-import com.example.zoostoreproject.Data.Entity.Vendor;
-import com.example.zoostoreproject.Bussiness.Mappers.Vendor.VendorMapperImpl;
-import com.example.zoostoreproject.Data.Repository.VendorRepository;
+import com.example.zoostoreproject.Data.entity.Vendor;
+import com.example.zoostoreproject.Bussiness.mappers.Vendor.VendorMapperImpl;
+import com.example.zoostoreproject.Data.repository.VendorRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

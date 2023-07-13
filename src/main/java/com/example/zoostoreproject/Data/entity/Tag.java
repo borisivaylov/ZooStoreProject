@@ -1,4 +1,4 @@
-package com.example.zoostoreproject.Data.Entity;
+package com.example.zoostoreproject.Data.entity;
 
 
 import jakarta.persistence.*;
@@ -16,9 +16,7 @@ import java.util.UUID;
 public class Tag {
     @jakarta.persistence.Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    @Column
     protected UUID Id;
-    @Column
     protected String tagName;
 
 }

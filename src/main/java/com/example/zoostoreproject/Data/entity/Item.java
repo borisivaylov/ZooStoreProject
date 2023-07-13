@@ -1,7 +1,9 @@
-package com.example.zoostoreproject.Data.Entity;
+package com.example.zoostoreproject.Data.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+
+import java.util.Set;
 import java.util.UUID;
 
 @Getter
@@ -14,16 +16,18 @@ import java.util.UUID;
 public class Item {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    @Column
-    private UUID Id;
-    @Column
-    private String title;
-    @Column
-    private String description;
-    @Column
-    private  String vendor;
-   // @Column
-   // protected List<Tag> tags;
-    //protected Set<media> media;
 
+    private UUID Id;
+
+    private String title;
+
+    private String description;
+
+    private  String vendor;
+
+    @OneToMany
+    private Set<Tag> tags;
+
+    @OneToMany
+    protected Set<Media> media;
 }
