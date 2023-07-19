@@ -1,7 +1,7 @@
 package com.example.zoostoreproject.API.Operations.Item;
 
-import com.example.zoostoreproject.Data.entity.Media;
-import com.example.zoostoreproject.Data.entity.Tag;
+import com.example.zoostoreproject.persistance.entity.Media;
+import com.example.zoostoreproject.persistance.entity.Tag;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
 
@@ -21,7 +21,7 @@ public class ItemRequest {
     @JsonProperty("description")
     private String description;
     @JsonProperty("vendor")
-    private String vendor;
+    private UUID vendor;
     @JsonProperty("media")
     private Set<Media> media;
     @JsonProperty("tags")

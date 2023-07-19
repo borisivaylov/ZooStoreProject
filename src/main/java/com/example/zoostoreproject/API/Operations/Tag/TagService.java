@@ -1,6 +1,6 @@
 package com.example.zoostoreproject.API.Operations.Tag;
 
-import com.example.zoostoreproject.Data.entity.Tag;
+import com.example.zoostoreproject.persistance.entity.Tag;
 
 public interface TagService
 {

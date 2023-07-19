@@ -1,5 +1,6 @@
-package com.example.zoostoreproject.API.Operations.Item;
+package com.example.zoostoreproject.API.Operations.Item.create;
 
+import com.example.zoostoreproject.API.Operations.base.OperationResult;
 import com.example.zoostoreproject.persistance.entity.Media;
 import com.example.zoostoreproject.persistance.entity.Tag;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -13,8 +14,7 @@ import java.util.UUID;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class ItemResponse {
-
+public class CreateItemResponse implements OperationResult {
     @JsonProperty("id")
     private UUID id;
     @JsonProperty("title")
@@ -27,5 +27,6 @@ public class ItemResponse {
     private Set<Media> media;
     @JsonProperty("tags")
     private Set<Tag> tags;
+    @JsonProperty("archive")
+    private boolean archive;
 }
-
