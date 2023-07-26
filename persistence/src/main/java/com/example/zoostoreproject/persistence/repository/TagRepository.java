@@ -10,5 +10,5 @@ import java.util.UUID;
 @Repository
 public interface TagRepository extends JpaRepository<Tag, UUID>
 {
-
+    Tag findTagById(UUID uuid);
 }

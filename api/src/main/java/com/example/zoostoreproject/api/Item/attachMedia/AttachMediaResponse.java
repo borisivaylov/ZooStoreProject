@@ -1,8 +1,9 @@
 package com.example.zoostoreproject.api.Item.attachMedia;
 
 
-import com.example.zoostoreproject.api.Media.MediaResponse;
+
 import com.example.zoostoreproject.api.base.OperationResult;
+
 import com.example.zoostoreproject.persistence.entity.Media;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;

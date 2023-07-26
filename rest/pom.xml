@@ -4,12 +4,12 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>com.example</groupId>
+        <groupId>com.example.zoostore</groupId>
         <artifactId>ZooStoreProject</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
+        <version>${revision}</version>
     </parent>
 
-    <groupId>com.example.zoostorage</groupId>
+
     <artifactId>rest</artifactId>
 
     <properties>
@@ -22,16 +22,17 @@
 
 
         <dependency>
-            <groupId>com.example.zoostorage</groupId>
+            <groupId>com.example.zoostore</groupId>
             <artifactId>core</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <version>${revision}</version>
         </dependency>
 
         <dependency>
-            <groupId>com.example.zoostorage</groupId>
+            <groupId>com.example.zoostore</groupId>
             <artifactId>api</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <version>${revision}</version>
         </dependency>
+
 
     </dependencies>
 

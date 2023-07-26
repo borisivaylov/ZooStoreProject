@@ -31,6 +31,8 @@ public class ItemUpdateService implements UpdateItemService {
                 .title(item.getTitle())
                 .vendor(item.getVendorId())
                 .description(item.getDescription())
+                .media(item.getMedia())
+                .tags(item.getTags())
                 .archive(item.getArchived())
                 .build();
     }

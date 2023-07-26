@@ -2,6 +2,8 @@ package com.example.zoostoreproject.core.item.create;
 import com.example.zoostoreproject.api.Item.create.CreateItemRequest;
 import com.example.zoostoreproject.api.Item.create.CreateItemResponse;
 import com.example.zoostoreproject.api.Item.create.CreateItemService;
+
+
 import com.example.zoostoreproject.persistence.entity.Item;
 import com.example.zoostoreproject.persistence.repository.ItemRepository;
 import lombok.RequiredArgsConstructor;
@@ -12,6 +14,7 @@ import org.springframework.stereotype.Service;
 public class ItemCreateService implements CreateItemService {
 
     private final ItemRepository itemRepository;
+    //private final ZooStoreRestExport zooStoreRestExport;
 
     @Override
     public CreateItemResponse process(CreateItemRequest createItemRequest) {
@@ -20,6 +23,7 @@ public class ItemCreateService implements CreateItemService {
                 .title(createItemRequest.getTitle())
                 .vendorId(createItemRequest.getVendor())
                 .description(createItemRequest.getDescription())
+                .archived(false)
                 .build();
 
         itemRepository.save(item);

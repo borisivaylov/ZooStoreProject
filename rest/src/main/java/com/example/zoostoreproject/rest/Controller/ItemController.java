@@ -8,16 +8,21 @@ import com.example.zoostoreproject.api.Item.attachTag.AttachTagRequest;
 import com.example.zoostoreproject.api.Item.attachTag.AttachTagResponse;
 import com.example.zoostoreproject.api.Item.create.CreateItemRequest;
 import com.example.zoostoreproject.api.Item.create.CreateItemResponse;
+import com.example.zoostoreproject.api.Item.getItem.GetItemRequest;
+import com.example.zoostoreproject.api.Item.getItem.GetItemResponse;
 import com.example.zoostoreproject.api.Item.update.UpdateItemRequest;
 import com.example.zoostoreproject.api.Item.update.UpdateItemResponse;
 import com.example.zoostoreproject.core.item.archive.ItemArchiveService;
 import com.example.zoostoreproject.core.item.attachMedia.AttachMediaService;
 import com.example.zoostoreproject.core.item.attachTag.AttachTagService;
 import com.example.zoostoreproject.core.item.create.ItemCreateService;
+import com.example.zoostoreproject.core.item.getItem.GetItemOperation;
 import com.example.zoostoreproject.core.item.update.ItemUpdateService;
 import lombok.RequiredArgsConstructor;
 
 import org.springframework.web.bind.annotation.*;
+
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/item")
@@ -32,13 +37,14 @@ public class ItemController {
     private final AttachMediaService attachMediaService;
     private final ItemArchiveService itemArchiveService;
     private final ItemUpdateService itemUpdateService;
+    private final GetItemOperation getItemService;
 
 
-    @PostMapping("/additem")
+    @PostMapping("/addItem")
     CreateItemResponse newItem(@RequestBody CreateItemRequest createItemRequest){
         return itemCreateService.process(createItemRequest);
     }
-    @PutMapping("/attachItemTag")
+    @PostMapping("/attachItemTag")
     AttachTagResponse attachTag(@RequestBody AttachTagRequest attachTagRequest){
         return attachTagService.process(attachTagRequest);
     }
@@ -54,6 +60,10 @@ public class ItemController {
     @PostMapping("/updateItem")
     UpdateItemResponse itemUpdate(@RequestBody UpdateItemRequest updateItemRequest){
         return itemUpdateService.process(updateItemRequest);
+    }
+    @GetMapping("/{uuid}")
+    GetItemResponse getItem(@PathVariable UUID uuid){
+        return getItemService.process(GetItemRequest.builder().itemId(uuid).build());
     }
 
 }

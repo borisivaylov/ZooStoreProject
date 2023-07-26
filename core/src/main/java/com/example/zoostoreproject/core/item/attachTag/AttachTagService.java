@@ -22,10 +22,9 @@ public class AttachTagService implements com.example.zoostoreproject.api.Item.at
         Item item = itemRepository.findById(attachTagRequest.getItemId()).orElseThrow(()->
                 new IllegalArgumentException("Item with ID:" + attachTagRequest.getItemId() + "was not found"));
         Tag tag = tagRepository.findById(attachTagRequest.getTagId()).orElseThrow(()->
-                new IllegalArgumentException("Tag with ID:" + attachTagRequest.getTagId() + "was not found"));
-
-        item.getTags().add(tag);
-        itemRepository.save(item);
+                new IllegalArgumentException("Item with ID:" + attachTagRequest.getItemId() + "was not found"));;
+                item.getTags().add(tag);
+                itemRepository.save(item);
 
         return AttachTagResponse.builder()
                                         .itemId(item.getId())

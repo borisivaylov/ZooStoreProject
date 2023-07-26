@@ -10,7 +10,7 @@
     </parent>
 
 
-    <artifactId>core</artifactId>
+    <artifactId>restexport</artifactId>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
@@ -22,21 +22,16 @@
 
         <dependency>
             <groupId>com.example.zoostore</groupId>
-            <artifactId>persistence</artifactId>
+            <artifactId>api</artifactId>
             <version>${revision}</version>
         </dependency>
-
         <dependency>
             <groupId>com.example.zoostore</groupId>
             <artifactId>api</artifactId>
             <version>${revision}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.example.zoostore</groupId>
-            <artifactId>restexport</artifactId>
-            <version>${revision}</version>
+            <scope>compile</scope>
         </dependency>
 
     </dependencies>
+
 </project>

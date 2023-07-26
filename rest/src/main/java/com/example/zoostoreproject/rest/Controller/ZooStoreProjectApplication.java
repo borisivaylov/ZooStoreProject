@@ -13,6 +13,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @EntityScan(basePackages = {"com.example.zoostoreproject.persistence.entity"})
 @EnableJpaRepositories(basePackages = {"com.example.zoostoreproject.persistence.repository"})
 
+
 @SpringBootApplication
 public class ZooStoreProjectApplication {
 

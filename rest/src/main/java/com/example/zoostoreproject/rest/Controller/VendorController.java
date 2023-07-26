@@ -16,7 +16,7 @@ public class VendorController {
 
 
     private final VendorCreateService vendorCreateService;
-    private  final VendorUpdateService vendorUpdateService;
+    private final VendorUpdateService vendorUpdateService;
 
     @PostMapping("/addVendor")
     CreateVendorResponse newVendor(@RequestBody CreateVendorRequest createVendorRequest){
