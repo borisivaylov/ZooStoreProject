@@ -1,6 +1,7 @@
 package com.example.zoostoreproject.core.item.attachMedia;
 
 
+import com.example.zoostoreproject.api.Item.attachMedia.AttachMediaOperation;
 import com.example.zoostoreproject.api.Item.attachMedia.AttachMediaRequest;
 import com.example.zoostoreproject.api.Item.attachMedia.AttachMediaResponse;
 import com.example.zoostoreproject.persistence.entity.Item;
@@ -12,7 +13,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class AttachMediaService implements com.example.zoostoreproject.api.Item.attachMedia.AttachMediaService {
+public class AttachMediaOperationProcessor implements AttachMediaOperation {
 
     private final ItemRepository itemRepository;
 

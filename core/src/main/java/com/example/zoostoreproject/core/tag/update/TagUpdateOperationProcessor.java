@@ -3,7 +3,7 @@ package com.example.zoostoreproject.core.tag.update;
 
 import com.example.zoostoreproject.api.Tag.update.UpdateTagRequest;
 import com.example.zoostoreproject.api.Tag.update.UpdateTagResponse;
-import com.example.zoostoreproject.api.Tag.update.UpdateTagService;
+import com.example.zoostoreproject.api.Tag.update.UpdateTagOperation;
 import com.example.zoostoreproject.persistence.entity.Tag;
 import com.example.zoostoreproject.persistence.repository.TagRepository;
 import lombok.RequiredArgsConstructor;
@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class TagUpdateService implements UpdateTagService {
+public class TagUpdateOperationProcessor implements UpdateTagOperation {
 
     public final TagRepository tagRepository;
 

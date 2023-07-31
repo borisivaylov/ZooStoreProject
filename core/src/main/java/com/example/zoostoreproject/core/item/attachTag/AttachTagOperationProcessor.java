@@ -1,5 +1,6 @@
 package com.example.zoostoreproject.core.item.attachTag;
 
+import com.example.zoostoreproject.api.Item.attachTag.AttachTagOperation;
 import com.example.zoostoreproject.api.Item.attachTag.AttachTagRequest;
 import com.example.zoostoreproject.api.Item.attachTag.AttachTagResponse;
 import com.example.zoostoreproject.persistence.entity.Item;
@@ -11,7 +12,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class AttachTagService implements com.example.zoostoreproject.api.Item.attachTag.AttachTagService {
+public class AttachTagOperationProcessor implements AttachTagOperation {
 
     private  final ItemRepository itemRepository;
 

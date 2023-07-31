@@ -21,7 +21,7 @@ public class Item {
     private String title;
     private String description;
     private UUID vendorId;
-    @OneToMany
+    @ManyToMany
     private Set<Tag> tags;
     @OneToMany
     protected Set<Media> media;

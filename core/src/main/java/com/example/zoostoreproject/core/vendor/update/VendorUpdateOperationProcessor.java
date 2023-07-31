@@ -3,7 +3,7 @@ package com.example.zoostoreproject.core.vendor.update;
 
 import com.example.zoostoreproject.api.Vendor.update.UpdateVendorRequest;
 import com.example.zoostoreproject.api.Vendor.update.UpdateVendorResponse;
-import com.example.zoostoreproject.api.Vendor.update.UpdateVendorService;
+import com.example.zoostoreproject.api.Vendor.update.UpdateVendorOperation;
 import com.example.zoostoreproject.persistence.entity.Vendor;
 import com.example.zoostoreproject.persistence.repository.VendorRepository;
 import lombok.RequiredArgsConstructor;
@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class VendorUpdateService implements UpdateVendorService {
+public class VendorUpdateOperationProcessor implements UpdateVendorOperation {
 
     private final VendorRepository vendorRepository;
 

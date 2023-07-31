@@ -3,7 +3,7 @@ package com.example.zoostoreproject.core.item.update;
 
 import com.example.zoostoreproject.api.Item.update.UpdateItemRequest;
 import com.example.zoostoreproject.api.Item.update.UpdateItemResponse;
-import com.example.zoostoreproject.api.Item.update.UpdateItemService;
+import com.example.zoostoreproject.api.Item.update.UpdateItemOperation;
 import com.example.zoostoreproject.persistence.entity.Item;
 import com.example.zoostoreproject.persistence.repository.ItemRepository;
 import lombok.RequiredArgsConstructor;
@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class ItemUpdateService implements UpdateItemService {
+public class ItemUpdateOperationProcessor implements UpdateItemOperation {
 
     private final ItemRepository itemRepository;
 

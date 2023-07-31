@@ -1,6 +1,7 @@
 package com.example.zoostoreproject.core.item.archive;
 
 
+import com.example.zoostoreproject.api.Item.archive.ItemArchiveOperation;
 import com.example.zoostoreproject.api.Item.archive.ItemArchiveRequest;
 import com.example.zoostoreproject.api.Item.archive.ItemArchiveResponse;
 import com.example.zoostoreproject.persistence.entity.Item;
@@ -10,7 +11,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class ItemArchiveService implements com.example.zoostoreproject.api.Item.archive.ItemArchiveService {
+public class ItemArchiveOperationProcessor implements ItemArchiveOperation {
 
 
     private final ItemRepository itemRepository;

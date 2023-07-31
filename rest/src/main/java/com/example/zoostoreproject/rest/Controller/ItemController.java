@@ -10,18 +10,22 @@ import com.example.zoostoreproject.api.Item.create.CreateItemRequest;
 import com.example.zoostoreproject.api.Item.create.CreateItemResponse;
 import com.example.zoostoreproject.api.Item.getItem.GetItemRequest;
 import com.example.zoostoreproject.api.Item.getItem.GetItemResponse;
+import com.example.zoostoreproject.api.Item.getallitems.GetAllItemsRequest;
+import com.example.zoostoreproject.api.Item.getallitems.GetAllItemsResponse;
 import com.example.zoostoreproject.api.Item.update.UpdateItemRequest;
 import com.example.zoostoreproject.api.Item.update.UpdateItemResponse;
-import com.example.zoostoreproject.core.item.archive.ItemArchiveService;
-import com.example.zoostoreproject.core.item.attachMedia.AttachMediaService;
-import com.example.zoostoreproject.core.item.attachTag.AttachTagService;
-import com.example.zoostoreproject.core.item.create.ItemCreateService;
-import com.example.zoostoreproject.core.item.getItem.GetItemOperation;
-import com.example.zoostoreproject.core.item.update.ItemUpdateService;
+import com.example.zoostoreproject.core.item.archive.ItemArchiveOperationProcessor;
+import com.example.zoostoreproject.core.item.attachMedia.AttachMediaOperationProcessor;
+import com.example.zoostoreproject.core.item.attachTag.AttachTagOperationProcessor;
+import com.example.zoostoreproject.core.item.create.ItemCreateOperationProcessor;
+import com.example.zoostoreproject.core.item.getItem.GetItemOperationProcessor;
+import com.example.zoostoreproject.core.item.getallitems.GetAllItemsOperationProcessor;
+import com.example.zoostoreproject.core.item.update.ItemUpdateOperationProcessor;
 import lombok.RequiredArgsConstructor;
 
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.UUID;
 
 @RestController
@@ -32,12 +36,13 @@ public class ItemController {
 
 
 
-    private final ItemCreateService itemCreateService;
-    private final AttachTagService attachTagService;
-    private final AttachMediaService attachMediaService;
-    private final ItemArchiveService itemArchiveService;
-    private final ItemUpdateService itemUpdateService;
-    private final GetItemOperation getItemService;
+    private final ItemCreateOperationProcessor itemCreateService;
+    private final AttachTagOperationProcessor attachTagService;
+    private final AttachMediaOperationProcessor attachMediaService;
+    private final ItemArchiveOperationProcessor itemArchiveService;
+    private final ItemUpdateOperationProcessor itemUpdateService;
+    private final GetItemOperationProcessor getItemService;
+    private final GetAllItemsOperationProcessor getAllItemsOperationProcessor;
 
 
     @PostMapping("/addItem")
@@ -61,9 +66,13 @@ public class ItemController {
     UpdateItemResponse itemUpdate(@RequestBody UpdateItemRequest updateItemRequest){
         return itemUpdateService.process(updateItemRequest);
     }
-    @GetMapping("/{uuid}")
+    @GetMapping("/getbyId/{uuid}")
     GetItemResponse getItem(@PathVariable UUID uuid){
         return getItemService.process(GetItemRequest.builder().itemId(uuid).build());
+    }
+    @GetMapping("/{tagName}")
+    List<GetAllItemsResponse>getAllItemsByTag(@PathVariable String tagName){
+        return getAllItemsOperationProcessor.process(GetAllItemsRequest.builder().tagName(tagName).build());
     }
 
 }

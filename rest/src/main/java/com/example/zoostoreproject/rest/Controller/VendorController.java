@@ -4,8 +4,8 @@ import com.example.zoostoreproject.api.Vendor.create.CreateVendorRequest;
 import com.example.zoostoreproject.api.Vendor.create.CreateVendorResponse;
 import com.example.zoostoreproject.api.Vendor.update.UpdateVendorRequest;
 import com.example.zoostoreproject.api.Vendor.update.UpdateVendorResponse;
-import com.example.zoostoreproject.core.vendor.create.VendorCreateService;
-import com.example.zoostoreproject.core.vendor.update.VendorUpdateService;
+import com.example.zoostoreproject.core.vendor.create.VendorCreateOperationProcessor;
+import com.example.zoostoreproject.core.vendor.update.VendorUpdateOperationProcessor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -15,8 +15,8 @@ import org.springframework.web.bind.annotation.*;
 public class VendorController {
 
 
-    private final VendorCreateService vendorCreateService;
-    private final VendorUpdateService vendorUpdateService;
+    private final VendorCreateOperationProcessor vendorCreateService;
+    private final VendorUpdateOperationProcessor vendorUpdateService;
 
     @PostMapping("/addVendor")
     CreateVendorResponse newVendor(@RequestBody CreateVendorRequest createVendorRequest){

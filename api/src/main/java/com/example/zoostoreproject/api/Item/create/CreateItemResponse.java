@@ -1,8 +1,6 @@
 package com.example.zoostoreproject.api.Item.create;
 
 
-import com.example.zoostoreproject.api.Media.MediaResponse;
-import com.example.zoostoreproject.api.Media.create.MediaCreateResponse;
 import com.example.zoostoreproject.api.base.OperationResult;
 import com.example.zoostoreproject.persistence.entity.Media;
 import com.example.zoostoreproject.persistence.entity.Tag;

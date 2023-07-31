@@ -5,8 +5,8 @@ import com.example.zoostoreproject.api.Tag.create.CreateTagRequest;
 import com.example.zoostoreproject.api.Tag.create.CreateTagResponse;
 import com.example.zoostoreproject.api.Tag.update.UpdateTagRequest;
 import com.example.zoostoreproject.api.Tag.update.UpdateTagResponse;
-import com.example.zoostoreproject.core.tag.create.TagCreateService;
-import com.example.zoostoreproject.core.tag.update.TagUpdateService;
+import com.example.zoostoreproject.core.tag.create.TagCreateOperationProcessor;
+import com.example.zoostoreproject.core.tag.update.TagUpdateOperationProcessor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -15,8 +15,8 @@ import org.springframework.web.bind.annotation.*;
 @RequiredArgsConstructor
 public class TagController
 {
-    private final TagCreateService tagCreateService;
-    private final TagUpdateService tagUpdateService;
+    private final TagCreateOperationProcessor tagCreateService;
+    private final TagUpdateOperationProcessor tagUpdateService;
 
     @PostMapping("/newTag")
     CreateTagResponse newTag(@RequestBody CreateTagRequest createTagRequest) {

@@ -1,6 +1,7 @@
 package com.example.zoostoreproject.core.media.create;
 
 
+import com.example.zoostoreproject.api.Media.create.MediaCreateOperation;
 import com.example.zoostoreproject.api.Media.create.MediaCreateRequest;
 import com.example.zoostoreproject.api.Media.create.MediaCreateResponse;
 import com.example.zoostoreproject.persistence.entity.Media;
@@ -10,7 +11,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class MediaCreateService implements com.example.zoostoreproject.api.Media.create.MediaCreateService
+public class MediaCreateOperationProcessor implements MediaCreateOperation
 {
 
     private final MediaRepository mediaRepository;

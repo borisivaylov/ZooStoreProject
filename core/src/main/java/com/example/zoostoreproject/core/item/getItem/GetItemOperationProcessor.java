@@ -2,7 +2,6 @@ package com.example.zoostoreproject.core.item.getItem;
 
 import com.example.zoostoreproject.api.Item.getItem.GetItemRequest;
 import com.example.zoostoreproject.api.Item.getItem.GetItemResponse;
-import com.example.zoostoreproject.api.Item.getItem.GetItemService;
 import com.example.zoostoreproject.persistence.entity.Item;
 import com.example.zoostoreproject.persistence.repository.ItemRepository;
 import lombok.RequiredArgsConstructor;
@@ -11,7 +10,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class GetItemOperation implements GetItemService {
+public class GetItemOperationProcessor implements com.example.zoostoreproject.api.Item.getItem.GetItemOperation {
 
     public final ItemRepository itemRepository;
 

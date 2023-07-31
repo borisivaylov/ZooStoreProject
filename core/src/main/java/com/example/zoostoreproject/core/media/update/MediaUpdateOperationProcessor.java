@@ -1,6 +1,7 @@
 package com.example.zoostoreproject.core.media.update;
 
 
+import com.example.zoostoreproject.api.Media.update.MediaUpdateOperation;
 import com.example.zoostoreproject.api.Media.update.MediaUpdateRequest;
 import com.example.zoostoreproject.api.Media.update.MediaUpdateResponse;
 import com.example.zoostoreproject.persistence.entity.Media;
@@ -10,7 +11,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class MediaUpdateService implements com.example.zoostoreproject.api.Media.update.MediaUpdateService {
+public class MediaUpdateOperationProcessor implements MediaUpdateOperation {
 
     public final MediaRepository mediaRepository;
 

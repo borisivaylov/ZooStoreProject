@@ -3,7 +3,7 @@ package com.example.zoostoreproject.core.tag.create;
 
 import com.example.zoostoreproject.api.Tag.create.CreateTagRequest;
 import com.example.zoostoreproject.api.Tag.create.CreateTagResponse;
-import com.example.zoostoreproject.api.Tag.create.CreateTagService;
+import com.example.zoostoreproject.api.Tag.create.CreateTagOperation;
 import com.example.zoostoreproject.persistence.entity.Tag;
 import com.example.zoostoreproject.persistence.repository.TagRepository;
 import lombok.RequiredArgsConstructor;
@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class TagCreateService implements CreateTagService {
+public class TagCreateOperationProcessor implements CreateTagOperation {
 
     private final TagRepository tagRepository;
 
