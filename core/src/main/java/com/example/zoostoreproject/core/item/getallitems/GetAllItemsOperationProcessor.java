@@ -56,7 +56,6 @@ public class GetAllItemsOperationProcessor implements GetAllItemsOperation {
                         .archived(item.getArchived())
                         .build());
 
-                System.out.println("pause");
         }
         return getAllItemsResponseList;
     }

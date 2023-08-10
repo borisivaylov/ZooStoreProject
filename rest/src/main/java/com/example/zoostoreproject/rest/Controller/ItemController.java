@@ -6,6 +6,8 @@ import com.example.zoostoreproject.api.Item.attachMedia.AttachMediaRequest;
 import com.example.zoostoreproject.api.Item.attachMedia.AttachMediaResponse;
 import com.example.zoostoreproject.api.Item.attachTag.AttachTagRequest;
 import com.example.zoostoreproject.api.Item.attachTag.AttachTagResponse;
+import com.example.zoostoreproject.api.Item.bytitleregex.GetByTitleRegexInput;
+import com.example.zoostoreproject.api.Item.bytitleregex.GetByTitleRegexResult;
 import com.example.zoostoreproject.api.Item.create.CreateItemRequest;
 import com.example.zoostoreproject.api.Item.create.CreateItemResponse;
 import com.example.zoostoreproject.api.Item.getItem.GetItemRequest;
@@ -20,9 +22,14 @@ import com.example.zoostoreproject.core.item.attachTag.AttachTagOperationProcess
 import com.example.zoostoreproject.core.item.create.ItemCreateOperationProcessor;
 import com.example.zoostoreproject.core.item.getItem.GetItemOperationProcessor;
 import com.example.zoostoreproject.core.item.getallitems.GetAllItemsOperationProcessor;
+import com.example.zoostoreproject.core.item.itemsbytitleregex.GetItemByTitleRegexOperationProcessor;
 import com.example.zoostoreproject.core.item.update.ItemUpdateOperationProcessor;
 import lombok.RequiredArgsConstructor;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -33,9 +40,6 @@ import java.util.UUID;
 @RequiredArgsConstructor
 public class ItemController {
 
-
-
-
     private final ItemCreateOperationProcessor itemCreateService;
     private final AttachTagOperationProcessor attachTagService;
     private final AttachMediaOperationProcessor attachMediaService;
@@ -43,6 +47,7 @@ public class ItemController {
     private final ItemUpdateOperationProcessor itemUpdateService;
     private final GetItemOperationProcessor getItemService;
     private final GetAllItemsOperationProcessor getAllItemsOperationProcessor;
+    private final GetItemByTitleRegexOperationProcessor getItemByTitleRegexOperationProcessor;
 
 
     @PostMapping("/addItem")
@@ -73,6 +78,11 @@ public class ItemController {
     @GetMapping("/{tagName}")
     List<GetAllItemsResponse>getAllItemsByTag(@PathVariable String tagName){
         return getAllItemsOperationProcessor.process(GetAllItemsRequest.builder().tagName(tagName).build());
+    }
+    @GetMapping("/byTitle/{string}")
+    List<GetByTitleRegexResult> getItemPageByTitleRegex(@PathVariable String string) {
+        return getItemByTitleRegexOperationProcessor.process(GetByTitleRegexInput.builder()
+                        .regex(string).build());
     }
 
 }

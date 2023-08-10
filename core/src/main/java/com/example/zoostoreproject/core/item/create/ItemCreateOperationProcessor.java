@@ -14,7 +14,7 @@ import org.springframework.stereotype.Service;
 public class ItemCreateOperationProcessor implements CreateItemOperation {
 
     private final ItemRepository itemRepository;
-    //private final ZooStoreRestExport zooStoreRestExport;
+
 
     @Override
     public CreateItemResponse process(CreateItemRequest createItemRequest) {
