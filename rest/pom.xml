@@ -37,13 +37,13 @@
     </dependencies>
 
     <build>
-        <finalName>com.example.zoostoreproject.rest.Controller.ZooStoreProjectApplication</finalName>
+        <finalName>ZooStoreProjectApplication</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <mainClass>com.example.zoostoreproject.rest.ZooStoreProjectApplication</mainClass>
+                    <mainClass>com.example.zoostoreproject.rest.Controller.ZooStoreProjectApplication</mainClass>
                 </configuration>
                 <executions>
                     <execution>
