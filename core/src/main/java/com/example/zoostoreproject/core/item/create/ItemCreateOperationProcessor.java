@@ -6,6 +6,7 @@ import com.example.zoostoreproject.api.Item.create.CreateItemOperation;
 
 import com.example.zoostoreproject.persistence.entity.Item;
 import com.example.zoostoreproject.persistence.repository.ItemRepository;
+import com.example.zoostoreproject.persistence.repository.VendorRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -14,6 +15,7 @@ import org.springframework.stereotype.Service;
 public class ItemCreateOperationProcessor implements CreateItemOperation {
 
     private final ItemRepository itemRepository;
+    private final VendorRepository vendorRepository;
 
 
     @Override
@@ -32,7 +34,7 @@ public class ItemCreateOperationProcessor implements CreateItemOperation {
                 .id(item.getId())
                 .title(createItemRequest.getTitle())
                 .description(createItemRequest.getDescription())
-                .vendor(createItemRequest.getVendor())
+                .vendor(vendorRepository.findVendorById(createItemRequest.getVendor()).getVendorName())
                 .tags(item.getTags())
                 .media(item.getMedia())
                 .build();

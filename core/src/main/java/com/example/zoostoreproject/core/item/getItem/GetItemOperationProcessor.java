@@ -7,6 +7,8 @@ import com.example.zoostoreproject.persistence.repository.ItemRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.NoSuchElementException;
+
 
 @Service
 @RequiredArgsConstructor
@@ -18,7 +20,7 @@ public class GetItemOperationProcessor implements com.example.zoostoreproject.ap
     public GetItemResponse process(GetItemRequest getItemRequest) {
 
       Item item = itemRepository.findById(getItemRequest.getItemId()).
-               orElseThrow(()-> new IllegalArgumentException("err"));
+               orElseThrow(()-> new NoSuchElementException("There is no such item"));
 
         return GetItemResponse.builder()
                 .id(item.getId())

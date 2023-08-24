@@ -23,7 +23,7 @@ public class CreateItemResponse implements OperationResult {
     @JsonProperty("description")
     private String description;
     @JsonProperty("vendor")
-    private UUID vendor;
+    private String vendor;
     @JsonProperty("media")
     private Set<Media> media;
     @JsonProperty("tags")
