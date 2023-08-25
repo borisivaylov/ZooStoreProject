@@ -6,13 +6,12 @@ import com.example.zoostoreproject.api.Item.bytitleregex.GetByTitleRegexResult;
 import com.example.zoostoreproject.persistence.entity.Item;
 import com.example.zoostoreproject.persistence.repository.ItemRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageImpl;
-import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+
+    // Return a list of item found by title using regex
 
 @Service
 @RequiredArgsConstructor

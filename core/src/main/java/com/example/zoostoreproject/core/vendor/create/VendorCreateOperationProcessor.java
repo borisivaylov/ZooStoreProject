@@ -15,7 +15,6 @@ public class VendorCreateOperationProcessor implements CreateVendorOperation {
 
     private final VendorRepository vendorRepository;
 
-
     @Override
     public CreateVendorResponse process(CreateVendorRequest createVendorRequest) {
 

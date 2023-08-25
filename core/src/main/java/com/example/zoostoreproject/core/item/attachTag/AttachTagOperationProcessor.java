@@ -10,20 +10,23 @@ import com.example.zoostoreproject.persistence.repository.TagRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+    // Attach a tag to an item.
+
 @Service
 @RequiredArgsConstructor
 public class AttachTagOperationProcessor implements AttachTagOperation {
 
     private  final ItemRepository itemRepository;
-
     private final TagRepository tagRepository;
 
     @Override
     public AttachTagResponse process(AttachTagRequest attachTagRequest) {
+
         Item item = itemRepository.findById(attachTagRequest.getItemId()).orElseThrow(()->
                 new IllegalArgumentException("Item with ID:" + attachTagRequest.getItemId() + "was not found"));
+
         Tag tag = tagRepository.findById(attachTagRequest.getTagId()).orElseThrow(()->
-                new IllegalArgumentException("Item with ID:" + attachTagRequest.getItemId() + "was not found"));;
+                new IllegalArgumentException("Item with ID:" + attachTagRequest.getItemId() + "was not found"));
                 item.getTags().add(tag);
                 itemRepository.save(item);
 

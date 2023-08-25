@@ -14,7 +14,6 @@ import org.springframework.stereotype.Service;
 public class VendorUpdateOperationProcessor implements UpdateVendorOperation {
 
     private final VendorRepository vendorRepository;
-
     @Override
     public UpdateVendorResponse process(UpdateVendorRequest updateVendorRequest) {
 

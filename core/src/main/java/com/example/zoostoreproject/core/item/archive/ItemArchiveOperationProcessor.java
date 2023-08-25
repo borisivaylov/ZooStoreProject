@@ -9,14 +9,14 @@ import com.example.zoostoreproject.persistence.repository.ItemRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+    //Archives an item, marking it as not sellable anymore.
+
+
 @Service
 @RequiredArgsConstructor
 public class ItemArchiveOperationProcessor implements ItemArchiveOperation {
 
-
     private final ItemRepository itemRepository;
-    
-
     @Override
     public ItemArchiveResponse process(ItemArchiveRequest itemArchiveRequest) {
         Item item = itemRepository.findById(itemArchiveRequest.getItemId()).orElseThrow(() ->

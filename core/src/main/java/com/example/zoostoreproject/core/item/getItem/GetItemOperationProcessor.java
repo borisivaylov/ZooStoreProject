@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.NoSuchElementException;
 
+// Return an item found by id.
 
 @Service
 @RequiredArgsConstructor

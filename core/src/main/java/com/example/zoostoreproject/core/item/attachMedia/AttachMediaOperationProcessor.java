@@ -11,12 +11,13 @@ import com.example.zoostoreproject.persistence.repository.MediaRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+    // Adds media url to an item.
+
 @Service
 @RequiredArgsConstructor
 public class AttachMediaOperationProcessor implements AttachMediaOperation {
 
     private final ItemRepository itemRepository;
-
     private final MediaRepository mediaRepository;
 
     @Override
